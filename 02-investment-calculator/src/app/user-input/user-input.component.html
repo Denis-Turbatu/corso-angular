@@ -1,0 +1,26 @@
+<form>
+    <div class="input-group">
+        <div class="input-section">
+            <label for="initial-investment">Investimento iniziale</label>
+            <input type="number" name="initial-investment" id="initial-investment" [(ngModel)]="investmentData.initInv">
+        </div>
+        <div class="input-section">
+            <label for="initial-investment">Tasso di ritorno</label>
+            <input type="number" name="return-rate" id="return-rate" [(ngModel)]="investmentData.rtnRate">
+        </div>
+        <div class="input-section">
+            <label for="duration">Durata</label>
+            <input type="number" name="duration" id="duration" [(ngModel)]="investmentData.timeInv">
+        </div>
+        <div class="input-section">
+            <label for="compound">Compound</label>
+            <input type="number" name="compound" id="compound" [(ngModel)]="investmentData.compound">
+        </div>
+        <div class="input-section">
+            <label for="additional-contribution">Contributo aggiuntivo</label>
+            <input type="number" name="additional-contribution" id="additional-contribution"
+                [(ngModel)]="investmentData.addContribution">
+        </div>
+        <button (click)="calcola()">Calcola</button>
+    </div>
+</form>

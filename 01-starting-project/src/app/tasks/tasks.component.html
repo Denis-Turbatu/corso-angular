@@ -1,0 +1,23 @@
+<section id="tasks">
+    <header>
+        <h2>{{name}}'s Tasks</h2>
+        <menu>
+            <button (click)="openModal()">Add task</button>
+            @if (isOpenModal === true) {
+            <app-task-modal 
+                [isOpen]="isOpenModal" 
+                [userId]="userId" 
+                (close)="onModalClose($event)"
+                ></app-task-modal>
+            }
+        </menu>
+    </header>
+
+    <ul>
+        @for (task of selectedUserTask; track task.id) {
+        <li>
+            <app-task [task]="task" />
+        </li>
+        }
+    </ul>
+</section>

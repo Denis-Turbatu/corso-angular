@@ -1,0 +1,26 @@
+@if (!results) {
+<p>Si prega di inserire dei dati!</p>
+}@else {
+<section class="wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Year</th>
+        <th>Value Investment</th>
+        <th>Interests</th>
+        <th>Total Investment</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of results; track $index; let i = $index) {
+      <tr>
+        <td data-label="Year">{{ $index + 1 }}</td>
+        <td data-label="Value Investment">{{ item.compoundInterest | currency: 'EUR' }}</td>
+        <td data-label="Interests">{{ item.interestPerYear | currency: 'EUR' }}</td>
+        <td data-label="Total Investment">{{ item.totalAmount | currency: 'EUR' }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</section>
+}

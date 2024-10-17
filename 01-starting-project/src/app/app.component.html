@@ -1,0 +1,16 @@
+<app-header></app-header>
+<main class="flex-container">
+  <ul id="users">
+    @for (user of users; track user.id){
+    <li>
+      <app-user [selectedCss]="user.id === selectedUserId" [user]="user" (selectedId)="printId($event)" />
+    </li>
+    }
+  </ul>
+
+  @if (selectedUser) {
+    <app-tasks [userId]="selectedUser.id" [name]="selectedUser.name"></app-tasks>
+  }@else {
+    <p>No user selected</p>
+  }
+</main>
